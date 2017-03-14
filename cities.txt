@@ -1,0 +1,42 @@
+choose positive integers from...
+[18897109, 12828837, 9461105, 6371773, 5965343, 5946800, 5582170, 5564635,
+ 5268860, 4552402, 4335391, 4296250, 4224851, 4192887, 3439809, 3279833,
+ 3095313, 2812896, 2783243, 2710489, 2543482, 2356285, 2226009, 2149127,
+ 2142508, 2134411]
+---------------------------------------------------------
+Choose integers that total 100000000
+need at least 15 cities.
+need at most 25 cities.
+trying combinations of 15 cities.
+trying combinations of 16 cities.
+trying combinations of 17 cities.
+trying combinations of 18 cities.
+
+Solved.
+Number of cities is 18
+Sum of cities is 100000000
+solution...
+[18897109, 12828837, 9461105, 6371773, 5946800, 5582170, 5268860, 4552402,
+ 4335391, 4296250, 4224851, 3279833, 3095313, 2812896, 2543482, 2226009,
+ 2142508, 2134411]
+elapsed time 12.377968149583257
+---------------------------------------------------------
+Choose integers that total 29161818
+need at least 2 cities.
+need at most 12 cities.
+trying combinations of 2 cities.
+trying combinations of 3 cities.
+trying combinations of 4 cities.
+trying combinations of 5 cities.
+trying combinations of 6 cities.
+trying combinations of 7 cities.
+trying combinations of 8 cities.
+
+Solved.
+Number of cities is 18
+Sum of cities is 100000000
+solution...
+[18897109, 12828837, 9461105, 6371773, 5946800, 5582170, 5268860, 4552402,
+ 4335391, 4296250, 4224851, 3279833, 3095313, 2812896, 2543482, 2226009,
+ 2142508, 2134411]
+elapsed time 1.3847906647353216
