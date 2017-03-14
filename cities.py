@@ -35,9 +35,11 @@ Can you find a subset of these areas where a total of exactly
 # Where N would be 1, 2, etc.
 # The list of cities is sorted from largest to smallest.
 # The range of N to try is reduced.
-# The problem sum(cities) - 100,000,000 is solved first which gives the 
-# cities that aren't part of the solution.  These cities are removed
-# from the original set of cities.
+# The problem is solved twice.
+# 1. Find cities that total 100,000,000.
+# 2. Find cities that total sum(cities) - 100,000,000 and choose the 
+#    cities that aren't part of the solution.  These cities are removed
+#    from the original set of cities.
 # The initial list of cities is sorted from largest to smallest.
 
 def fewest_cities_needed(total, items):
