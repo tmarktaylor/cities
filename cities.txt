@@ -1,16 +1,52 @@
-choose positive integers from...
+Can you find a subset of these areas where a total of exactly
+100,000,000 people live?
+City Populations:
 [18897109, 12828837, 9461105, 6371773, 5965343, 5946800, 5582170, 5564635,
  5268860, 4552402, 4335391, 4296250, 4224851, 4192887, 3439809, 3279833,
  3095313, 2812896, 2783243, 2710489, 2543482, 2356285, 2226009, 2149127,
  2142508, 2134411]
+Calulating the numbers of combinations.
+This takes a few seconds, but should be less than a minute. ...
+combinations of 26 taken 1 at a time = 26
+combinations of 26 taken 2 at a time = 325
+combinations of 26 taken 3 at a time = 2600
+combinations of 26 taken 4 at a time = 14950
+combinations of 26 taken 5 at a time = 65780
+combinations of 26 taken 6 at a time = 230230
+combinations of 26 taken 7 at a time = 657800
+combinations of 26 taken 8 at a time = 1562275
+combinations of 26 taken 9 at a time = 3124550
+combinations of 26 taken 10 at a time = 5311735
+combinations of 26 taken 11 at a time = 7726160
+combinations of 26 taken 12 at a time = 9657700
+combinations of 26 taken 13 at a time = 10400600
+combinations of 26 taken 14 at a time = 9657700
+combinations of 26 taken 15 at a time = 7726160
+combinations of 26 taken 16 at a time = 5311735
+combinations of 26 taken 17 at a time = 3124550
+combinations of 26 taken 18 at a time = 1562275
+combinations of 26 taken 19 at a time = 657800
+combinations of 26 taken 20 at a time = 230230
+combinations of 26 taken 21 at a time = 65780
+combinations of 26 taken 22 at a time = 14950
+combinations of 26 taken 23 at a time = 2600
+combinations of 26 taken 24 at a time = 325
+combinations of 26 taken 25 at a time = 26
+combinations of 26 taken 26 at a time = 1
 ---------------------------------------------------------
 Choose integers that total 100000000
 need at least 15 cities.
 need at most 25 cities.
-trying combinations of 15 cities.
-trying combinations of 16 cities.
-trying combinations of 17 cities.
-trying combinations of 18 cities.
+range(25, 14, -1)
+trying 26 combinations of 25 cities.
+trying 325 combinations of 24 cities.
+trying 2600 combinations of 23 cities.
+trying 14950 combinations of 22 cities.
+trying 65780 combinations of 21 cities.
+trying 230230 combinations of 20 cities.
+trying 657800 combinations of 19 cities.
+trying 1562275 combinations of 18 cities.
+Tried 2533986 combinations.
 
 Solved.
 Number of cities is 18
@@ -19,18 +55,20 @@ solution...
 [18897109, 12828837, 9461105, 6371773, 5946800, 5582170, 5268860, 4552402,
  4335391, 4296250, 4224851, 3279833, 3095313, 2812896, 2543482, 2226009,
  2142508, 2134411]
-elapsed time 12.377968149583257
+elapsed time 1.021573551945848
 ---------------------------------------------------------
 Choose integers that total 29161818
 need at least 2 cities.
 need at most 12 cities.
-trying combinations of 2 cities.
-trying combinations of 3 cities.
-trying combinations of 4 cities.
-trying combinations of 5 cities.
-trying combinations of 6 cities.
-trying combinations of 7 cities.
-trying combinations of 8 cities.
+range(2, 13)
+trying 325 combinations of 2 cities.
+trying 2600 combinations of 3 cities.
+trying 14950 combinations of 4 cities.
+trying 65780 combinations of 5 cities.
+trying 230230 combinations of 6 cities.
+trying 657800 combinations of 7 cities.
+trying 1562275 combinations of 8 cities.
+Tried 2533960 combinations.
 
 Solved.
 Number of cities is 18
@@ -39,4 +77,4 @@ solution...
 [18897109, 12828837, 9461105, 6371773, 5946800, 5582170, 5268860, 4552402,
  4335391, 4296250, 4224851, 3279833, 3095313, 2812896, 2543482, 2226009,
  2142508, 2134411]
-elapsed time 1.3847906647353216
+elapsed time 1.4315959151232909
