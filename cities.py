@@ -54,46 +54,108 @@ def most_cities_needed(total, items):
     """Sum smallest cities first until sum exceeds total."""
     return fewest_cities_needed(total, sorted(items))
 
-def solve_combinations_list(total, items, invert=False):
-    """The term invert denotes the concept that the original set is partitioned
-    into two sets, one whose items sum to the desired total and one that
-    contains the remaining items. When 'inverting' the remaining items are
-    returned.
+def solve(total, items, invert=False, 
+                            number_of_combinations=None):
+    """The solution can be thought of as partitioning the items into two
+    sets, one whose items sum to the desired total and one that contains
+    the remaining items.  When invert is True the remaining items are returned.
+    
+    number_of_combinations is a dictionary:
+        key = length of subsequence
+        value = number of combinations of subsequences of key's length
     """
-
-    atleast = fewest_cities_needed(total, items)
-    atmost = most_cities_needed(total, items)
-    print('need at least {} cities.'.format(atleast))
-    print('need at most {} cities.'.format(atmost))
-    for x in range(atleast, atmost+1):
-        print('trying combinations of {} cities.'.format(x))
+    num_combinations_tried = 0
+    at_least = fewest_cities_needed(total, items)
+    at_most = most_cities_needed(total, items)
+    print('need at least {} cities.'.format(at_least))
+    print('need at most {} cities.'.format(at_most))
+    assert at_least > 1, 'sanity check'
+    assert at_most >= at_least, 'sanity check'
+    
+    # Subsequences of half the length of the city populations have
+    # the most combinations and take the most time to try.
+    # The test below sets the range object to try shortest subsequences first.
+    if at_least < (len(items) - at_most):
+        range_to_try = range(at_least, at_most + 1)
+    else:
+        range_to_try = range(at_most, at_least - 1, -1)  # 
+    print(range_to_try)
+        
+    fmt = 'trying {} combinations of {} cities.'
+    for x in range_to_try:
+        if number_of_combinations:
+            n = number_of_combinations[x]
+            print('trying {} combinations of {} cities.'.format(n, x))
+            num_combinations_tried += n
+        else:
+            print('trying combinations of {} cities.'.format(x))        
+            
         combs = itertools.combinations(items, x)
         for comb in combs:
-            if sum(comb) == total:
+            if sum(comb) == total:   # solved?
+
+            # yes-
+                if number_of_combinations:
+                    fmt = 'Tried {} combinations.'
+                    print(fmt.format(num_combinations_tried))
                 if invert:
                     comb = set(items) - set(comb)
                 return comb
     return False
 
+def calculate_numbers_of_combinations_of(a_sequence):
+    """Return dict key= subsequence length, value= number of combinations)."""
+    number_of_combinations = dict()
+    for at_a_time, _ in enumerate(a_sequence, start=1):
+        n = len(a_sequence)
+        subsequences = itertools.combinations(a_sequence, at_a_time)
+
+        # This requires less memory than 
+        # subsequence_length = len(list(combinations))
+        # and should run faster.
+        subsequence_length = 0
+        for comb in subsequences: 
+            subsequence_length += 1
+        number_of_combinations[at_a_time] = subsequence_length
+    return number_of_combinations
+
 
 if __name__ == '__main__':
     pp = pprint.PrettyPrinter(width=79, compact=True)
-    availlist = [18897109, 12828837, 9461105, 6371773, 5965343, 5946800, 5582170,
-                  5564635,  5268860, 4552402, 4335391, 4296250, 4224851, 4192887,
-                  3439809,  3279833, 3095313, 2812896, 2783243, 2710489, 2543482,
-                  2356285,  2226009, 2149127, 2142508, 2134411]
-    m100 = 100000000
-    print('choose positive integers from...')
-    pp.pprint(availlist)
+    city_populations = [18897109, 12828837, 9461105, 6371773, 5965343, 
+                        5946800,   5582170, 5564635, 5268860, 4552402,
+                        4335391,   4296250, 4224851, 4192887, 3439809,
+                        3279833,   3095313, 2812896, 2783243, 2710489,
+                        2543482,   2356285, 2226009, 2149127, 2142508,
+                        2134411]
+    ONE_HUNDRED_MILLION = 100000000
+    
+    print('Can you find a subset of these areas where a total of exactly')
+    print('100,000,000 people live?')
+    print('City Populations:')
+    pp.pprint(city_populations)
+
+    # Determine numbers of combinations of subsequences of city_populations.
+    print('Calulating the numbers of combinations.')
+    print('This takes a few seconds, but should be less than a minute. ...')
+    combinations = calculate_numbers_of_combinations_of(city_populations)
+    fmt = 'combinations of {} taken {} at a time = {}'
+    n = len(city_populations)
+    for at_a_time, _ in enumerate(city_populations, start=1):
+        print(fmt.format(n, at_a_time, combinations[at_a_time]))
+    
     for invert_solution in (False, True):
         if invert_solution:
-            targettotal = sum(availlist) - m100
+            target_total = sum(city_populations) - ONE_HUNDRED_MILLION
         else:
-            targettotal = m100
+            target_total = ONE_HUNDRED_MILLION
         print('---------------------------------------------------------')
-        print('Choose integers that total {}'.format(targettotal))
+        print('Choose integers that total {}'.format(target_total))
         start_time = time.perf_counter()
-        solution = solve_combinations_list(targettotal, availlist, invert_solution)
+        solution = solve(target_total, 
+                         city_populations,
+                         invert_solution,
+                         combinations)
         end_time = time.perf_counter()
         print()
         if solution:
