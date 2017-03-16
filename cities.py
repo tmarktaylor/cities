@@ -79,7 +79,6 @@ def solve(total, items, invert=False,
         range_to_try = range(at_least, at_most + 1)
     else:
         range_to_try = range(at_most, at_least - 1, -1)  # 
-    print(range_to_try)
         
     fmt = 'trying {} combinations of {} cities.'
     for x in range_to_try:
