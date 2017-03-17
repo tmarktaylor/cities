@@ -1,78 +1,86 @@
 Can you find a subset of these areas where a total of exactly
 100,000,000 people live?
 City Populations:
-[18897109, 12828837, 9461105, 6371773, 5965343, 5946800, 5582170, 5564635,
- 5268860, 4552402, 4335391, 4296250, 4224851, 4192887, 3439809, 3279833,
- 3095313, 2812896, 2783243, 2710489, 2543482, 2356285, 2226009, 2149127,
- 2142508, 2134411]
-Calulating the numbers of combinations.
-This takes a few seconds, but should be less than a minute. ...
-combinations of 26 taken 1 at a time = 26
-combinations of 26 taken 2 at a time = 325
-combinations of 26 taken 3 at a time = 2600
-combinations of 26 taken 4 at a time = 14950
-combinations of 26 taken 5 at a time = 65780
-combinations of 26 taken 6 at a time = 230230
-combinations of 26 taken 7 at a time = 657800
-combinations of 26 taken 8 at a time = 1562275
-combinations of 26 taken 9 at a time = 3124550
-combinations of 26 taken 10 at a time = 5311735
-combinations of 26 taken 11 at a time = 7726160
-combinations of 26 taken 12 at a time = 9657700
-combinations of 26 taken 13 at a time = 10400600
-combinations of 26 taken 14 at a time = 9657700
-combinations of 26 taken 15 at a time = 7726160
-combinations of 26 taken 16 at a time = 5311735
-combinations of 26 taken 17 at a time = 3124550
-combinations of 26 taken 18 at a time = 1562275
-combinations of 26 taken 19 at a time = 657800
-combinations of 26 taken 20 at a time = 230230
-combinations of 26 taken 21 at a time = 65780
-combinations of 26 taken 22 at a time = 14950
-combinations of 26 taken 23 at a time = 2600
-combinations of 26 taken 24 at a time = 325
-combinations of 26 taken 25 at a time = 26
-combinations of 26 taken 26 at a time = 1
----------------------------------------------------------
-Choose integers that total 100000000
+[' 18,897,109', ' 12,828,837', '  9,461,105', '  6,371,773', '  5,965,343',
+ '  5,946,800', '  5,582,170', '  5,564,635', '  5,268,860', '  4,552,402',
+ '  4,335,391', '  4,296,250', '  4,224,851', '  4,192,887', '  3,439,809',
+ '  3,279,833', '  3,095,313', '  2,812,896', '  2,783,243', '  2,710,489',
+ '  2,543,482', '  2,356,285', '  2,226,009', '  2,149,127', '  2,142,508',
+ '  2,134,411']
+Show the number of combinations and the total number of
+additions to sum all the combinations.
+combinations of 26 taken  1 at a time =         26, adds=         676
+combinations of 26 taken  2 at a time =        325, adds=       8,450
+combinations of 26 taken  3 at a time =      2,600, adds=      67,600
+combinations of 26 taken  4 at a time =     14,950, adds=     388,700
+combinations of 26 taken  5 at a time =     65,780, adds=   1,710,280
+combinations of 26 taken  6 at a time =    230,230, adds=   5,985,980
+combinations of 26 taken  7 at a time =    657,800, adds=  17,102,800
+combinations of 26 taken  8 at a time =  1,562,275, adds=  40,619,150
+combinations of 26 taken  9 at a time =  3,124,550, adds=  81,238,300
+combinations of 26 taken 10 at a time =  5,311,735, adds= 138,105,110
+combinations of 26 taken 11 at a time =  7,726,160, adds= 200,880,160
+combinations of 26 taken 12 at a time =  9,657,700, adds= 251,100,200
+combinations of 26 taken 13 at a time = 10,400,600, adds= 270,415,600
+combinations of 26 taken 14 at a time =  9,657,700, adds= 251,100,200
+combinations of 26 taken 15 at a time =  7,726,160, adds= 200,880,160
+combinations of 26 taken 16 at a time =  5,311,735, adds= 138,105,110
+combinations of 26 taken 17 at a time =  3,124,550, adds=  81,238,300
+combinations of 26 taken 18 at a time =  1,562,275, adds=  40,619,150
+combinations of 26 taken 19 at a time =    657,800, adds=  17,102,800
+combinations of 26 taken 20 at a time =    230,230, adds=   5,985,980
+combinations of 26 taken 21 at a time =     65,780, adds=   1,710,280
+combinations of 26 taken 22 at a time =     14,950, adds=     388,700
+combinations of 26 taken 23 at a time =      2,600, adds=      67,600
+combinations of 26 taken 24 at a time =        325, adds=       8,450
+combinations of 26 taken 25 at a time =         26, adds=         676
+combinations of 26 taken 26 at a time =          1, adds=          26
+------------------------------------------------------------------------
+Choose integers that total 100,000,000
 need at least 15 cities.
 need at most 25 cities.
-trying 26 combinations of 25 cities.
-trying 325 combinations of 24 cities.
-trying 2600 combinations of 23 cities.
-trying 14950 combinations of 22 cities.
-trying 65780 combinations of 21 cities.
-trying 230230 combinations of 20 cities.
-trying 657800 combinations of 19 cities.
-trying 1562275 combinations of 18 cities.
-Tried 2533986 combinations.
+Trying combinations of 25 cities.
+Trying combinations of 24 cities.
+Trying combinations of 23 cities.
+Trying combinations of 22 cities.
+Trying combinations of 21 cities.
+Trying combinations of 20 cities.
+Trying combinations of 19 cities.
+Trying combinations of 18 cities.
+Tried 1,208,475 combinations.
+Number of additions = 23,143,082.
 
 Solved.
 Number of cities is 18
-Sum of cities is 100000000
+Sum of cities is 100,000,000
 solution...
-[18897109, 12828837, 9461105, 6371773, 5946800, 5582170, 5268860, 4552402,
- 4335391, 4296250, 4224851, 3279833, 3095313, 2812896, 2543482, 2226009,
- 2142508, 2134411]
-elapsed time 0.9910170147323194
----------------------------------------------------------
-Choose integers that total 29161818
+[' 18,897,109', ' 12,828,837', '  9,461,105', '  6,371,773', '  5,946,800',
+ '  5,582,170', '  5,268,860', '  4,552,402', '  4,335,391', '  4,296,250',
+ '  4,224,851', '  3,279,833', '  3,095,313', '  2,812,896', '  2,543,482',
+ '  2,226,009', '  2,142,508', '  2,134,411']
+elapsed time= 1.229417
+------------------------------------------------------------------------
+Choose integers that total 29,161,818
 need at least 2 cities.
 need at most 12 cities.
-trying 325 combinations of 2 cities.
-trying 2600 combinations of 3 cities.
-trying 14950 combinations of 4 cities.
-trying 65780 combinations of 5 cities.
-trying 230230 combinations of 6 cities.
-trying 657800 combinations of 7 cities.
-trying 1562275 combinations of 8 cities.
-Tried 2533960 combinations.
+Trying combinations of 2 cities.
+Trying combinations of 3 cities.
+Trying combinations of 4 cities.
+Trying combinations of 5 cities.
+Trying combinations of 6 cities.
+Trying combinations of 7 cities.
+Trying combinations of 8 cities.
+Tried 2,297,197 combinations.
+Number of additions = 16,987,226.
 
 Solved.
 Number of cities is 18
-Sum of cities is 100000000
+Sum of cities is 100,000,000
 solution...
-[18897109, 12828837, 9461105, 6371773, 5946800, 5582170, 5268860, 4552402,
- 4335391, 4296250, 4224851, 3279833, 3095313, 2812896, 2543482, 2226009,
- 2142508, 2134411]
-elapsed time 1.4029005781461052
+[' 18,897,109', ' 12,828,837', '  9,461,105', '  6,371,773', '  5,946,800',
+ '  5,582,170', '  5,268,860', '  4,552,402', '  4,335,391', '  4,296,250',
+ '  4,224,851', '  3,279,833', '  3,095,313', '  2,812,896', '  2,543,482',
+ '  2,226,009', '  2,142,508', '  2,134,411']
+elapsed time= 1.827889
+The first solution does nearly 50% more additions, but tries
+about half as many combinatons and is faster.
