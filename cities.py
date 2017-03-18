@@ -81,7 +81,7 @@ def solve(total, items, invert=False):
         combs = itertools.combinations(items, x)
         for comb in combs:
             num_combinations_tried += 1   # increases solution time slightly
-            num_adds += x
+            num_adds += (x - 1)
             if sum(comb) == total:   # solved?
 
                 # yes-
@@ -115,7 +115,8 @@ def show_numbers_of_combinations_of(a_sequence):
         num_subsequences = 0
         for _ in subsequences: 
             num_subsequences += 1
-        print(fmt.format(n, at_a_time, num_subsequences, n * num_subsequences))
+        print(fmt.format(n, at_a_time, num_subsequences, 
+                        (at_a_time - 1) * num_subsequences))
 
 if __name__ == '__main__':
     city_populations = [18897109, 12828837, 9461105, 6371773, 5965343, 
