@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.6, 3.7, 3.8]    # , pypy3] src/phmdoctest/functions.py:67: RuntimeError
+        python-version: [3.6, 3.7, 3.8, pypy3]
     steps:
     - uses: actions/checkout@v2
       # todo- remove before running in phmdoctest repos
