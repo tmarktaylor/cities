@@ -2,7 +2,7 @@
 # If a commit to one of these files breaks the install this action
 # should fail.
 # Let Travis CI handle events on the master branch.
-name: install
+name: Test pip install via setup.py
 
 on:
   workflow_dispatch:
