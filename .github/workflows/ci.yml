@@ -23,10 +23,8 @@ jobs:
         python-version: [3.6, 3.7, 3.8]    # , pypy3] src/phmdoctest/functions.py:67: RuntimeError
     steps:
     - uses: actions/checkout@v2
-      
       # todo- remove before running in phmdoctest repos
       with:
-        &myrepos
         repository: tmarktaylor/phmdoctest
         ref: master
     
@@ -58,9 +56,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        # todo- remove before running in phmdoctest repos
         with:
-          *myrepos    # todo- remove before running in phmdoctest repos
-      
+          repository: tmarktaylor/phmdoctest
+          ref: master
+          
       - name: Setup Python
         uses: actions/setup-python@v2
         with:
@@ -78,8 +78,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        # todo- remove before running in phmdoctest repos
         with:
-          *myrepos    # todo- remove before running in phmdoctest repos
+          repository: tmarktaylor/phmdoctest
+          ref: master
       
       - name: Setup Python
         uses: actions/setup-python@v2
