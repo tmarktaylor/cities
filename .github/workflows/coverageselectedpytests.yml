@@ -29,4 +29,4 @@ jobs:
           pip install "pytest>=5"
       - name: Coverage, Tests
         run: |
-          coerage run --branch -m pytest --strict -vv doc/test_setup_doctest.py --doctest-modules
+          coverage run --branch -m pytest --strict -vv doc/test_setup_doctest.py --doctest-modules
