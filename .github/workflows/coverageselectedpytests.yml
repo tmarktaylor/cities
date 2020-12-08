@@ -2,7 +2,7 @@
 # If a commit to one of these files breaks the install this action
 # should fail.
 # Let Travis CI handle events on the master branch.
-name: Selected pytests
+name: Coverage Selected pytests
 
 on:
   workflow_dispatch:
