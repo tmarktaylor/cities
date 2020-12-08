@@ -28,4 +28,4 @@ jobs:
           pip install "pytest>=5"
       - name: Tests
         run: |
-          pytest --strict -vv doc/test_setup_doctest_fix.py --doctest-modules
+          pytest --strict -vv doc/test_setup_doctest.py --doctest-modules
