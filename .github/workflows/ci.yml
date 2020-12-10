@@ -80,6 +80,7 @@ jobs:
       run: |
         flake8 --exit-zero --max-complexity=10
         check-manifest
+        python3 setup.py sdist bdist_wheel
         twine check dist/*
     - name: typing
       run: |
