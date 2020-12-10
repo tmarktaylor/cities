@@ -21,7 +21,7 @@ jobs:
       # todo- remove before running in phmdoctest repos
       with:
         repository: tmarktaylor/phmdoctest
-        ref: master
+        ref: pypy3issue
     
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
@@ -54,7 +54,7 @@ jobs:
       # todo- remove before running in phmdoctest repos
       with:
         repository: tmarktaylor/phmdoctest
-        ref: master
+        ref: pypy3issue
     - name: Setup Python
       uses: actions/setup-python@v2
       with:
@@ -75,7 +75,7 @@ jobs:
       # todo- remove before running in phmdoctest repos
       with:
         repository: tmarktaylor/phmdoctest
-        ref: master
+        ref: pypy3issue
           
     - name: Setup Python
       uses: actions/setup-python@v2
