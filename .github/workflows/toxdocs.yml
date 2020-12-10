@@ -30,6 +30,6 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: docs
-          # in tox.ini this is {toxworkdir}/html
-          path: .tox/docs/html
+          # in tox.ini this is {envtmpdir}/html
+          path: .tox/docs/tmp/html
           retention-days: 5
