@@ -1,4 +1,4 @@
-name: Code Coverage, Inspections, Docs
+name: Cover, Inspect, Docs
 
 # Note: Only inspect and docs jobs install phmdoctest and only to Python 3.x.
 #       None of the jobs run tests on the installed module.
@@ -80,7 +80,7 @@ jobs:
       run: |
         flake8 --exit-zero --max-complexity=10
         check-manifest
-        python3 setup.py sdist bdist_wheel
+        python3 setup.py sdist
         twine check dist/*
     - name: typing
       run: |
