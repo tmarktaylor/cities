@@ -31,7 +31,7 @@ jobs:
         pip install "commonmark>=0.9.1"
         pip install "monotable>=2.1.1"
         pip freeze
-    - name: Pytest Demo
+    - name: Pytest Demo (Expect Annotations 1 error)
       continue-on-error: true
       env:
         PYTHONPATH: ${{ github.workspace }}/src
