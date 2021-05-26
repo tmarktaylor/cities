@@ -1,0 +1,38 @@
+name: Black Demo
+
+on:
+  workflow_dispatch:
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      # todo- for debug only, remove
+      with:
+        repository: tmarktaylor/phmdoctest
+        ref: develop
+
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install black
+        pip freeze
+    - name: Black Demo
+      env:
+        PYTHONPATH: ${{ github.workspace }}/src    # todo- needed?
+      run: |
+        black src/phmdoctest
+        # todo- black tests
+        # todo- black doc
+
+    - name: Upload modifications
+      uses: actions/upload-artifact@v2
+      with:
+        name: phmdoctest_after_black
+        path: src/phmdoctest
+        retention-days: 5        
