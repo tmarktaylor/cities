@@ -26,7 +26,9 @@ jobs:
       env:
         PYTHONPATH: ${{ github.workspace }}/src    # todo- needed?
       run: |
-        black src/phmdoctest
+        # try on everything
+        black 
+        # src/phmdoctest
         # todo- black tests
         # todo- black doc
 
