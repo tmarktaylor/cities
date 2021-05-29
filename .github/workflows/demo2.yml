@@ -26,7 +26,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install "pytest>=5"
         # todo- pip install -r requirements.txt
-        pip install --no-deps "."
+        pip install --use-feature=in-tree-build --no-deps "."
         pip freeze
     - name: Pytest Demo (Expect Annotations 1 error)
       continue-on-error: true
