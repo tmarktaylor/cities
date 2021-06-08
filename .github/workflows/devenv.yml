@@ -35,7 +35,7 @@ jobs:
         pip install black
         pip freeze
         pip freeze > devreq/requirements.txt
-        pip download --dest wheels --require-hashes -r devreq/requirements.txt > devreq/hashes.txt
+        # pip download --dest wheels --require-hashes -r devreq/requirements.txt > devreq/hashes.txt
 
     - name: Upload
       uses: actions/upload-artifact@v2
