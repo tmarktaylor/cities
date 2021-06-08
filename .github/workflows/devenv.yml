@@ -13,6 +13,7 @@ jobs:
       with:
         python-version: 3.8
     - name: Install dependencies
+      continue-on-error: true
       run: |
         python -m pip install --upgrade pip
         mkdir devreq
@@ -33,9 +34,15 @@ jobs:
         pip install check-manifest
         pip install twine
         pip install black
+        #
+        pip install setuptools
+        pip install SecretStorage
+        pip install jeepney
+        pip install cffi
+        pip install pycparser
+        #
         pip freeze
         pip freeze > devreq/requirements.txt
-        # pip download --dest wheels --require-hashes -r devreq/requirements.txt > devreq/hashes.txt
 
     - name: Upload
       uses: actions/upload-artifact@v2
