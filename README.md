@@ -11,7 +11,7 @@ I saw this problem in a job posting.
  
  Here is the guts of the solution in cities.py.
  
- ```python3
+ ```python
  def solve(total, items, invert=False): 
     """The solution can be thought of as partitioning the items into two
     sets, one whose items sum to the desired total and one that contains
