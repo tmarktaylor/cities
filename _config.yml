@@ -1,6 +1,7 @@
 # Configure GitHub pages builder.
 theme: jekyll-theme-slate
 # show_downloads: true
-kramdown:
-  input: GFM
-  gfm_quirks: [paragraph_end]
+markdown: GFM
+# kramdown:
+#   input: GFM
+#   gfm_quirks: [paragraph_end]
