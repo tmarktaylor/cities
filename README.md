@@ -55,7 +55,7 @@ The 2010 Census puts populations of 26 largest US metro areas at 18897109,
     return False
 ```    
 
-Here is another snipper with the fenced code block info string of python3.
+Here is another snippet with the fenced code block info string of python3.
 
 ```python3
 def show_numbers_of_combinations_of(a_sequence):
