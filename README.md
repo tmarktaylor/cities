@@ -54,3 +54,26 @@ The 2010 Census puts populations of 26 largest US metro areas at 18897109,
                 return comb
     return False
 ```    
+
+Here is another snipper with the fenced code block info string of python3.
+
+```python3
+def show_numbers_of_combinations_of(a_sequence):
+    """Print the number of combinations for subsequences."""
+    print('Show the number of combinations and the total number of')
+    print('additions to sum all the combinations.')
+    for at_a_time, _ in enumerate(a_sequence, start=1):
+        n = len(a_sequence)
+        subsequences = itertools.combinations(a_sequence, at_a_time)
+
+        fmt = 'combinations of {} taken {:2} at a time = {:10,}, adds= {:11,}'
+
+        # This requires less memory than 
+        # subsequence_length = len(list(combinations))
+        # and should run faster.
+        num_subsequences = 0
+        for _ in subsequences: 
+            num_subsequences += 1
+        print(fmt.format(n, at_a_time, num_subsequences, 
+                        (at_a_time - 1) * num_subsequences))
+```
