@@ -8,3 +8,45 @@ I saw this problem in a job posting.
  and 2134411.
  Can you find a subset of these areas where a total of exactly 100,000,000
  people live, assuming the census estimates are exactly right?"
+ 
+ Here is the guts of the solution in cities.py.
+ 
+ ```python3
+ def solve(total, items, invert=False): 
+    """The solution can be thought of as partitioning the items into two
+    sets, one whose items sum to the desired total and one that contains
+    the remaining items.  When invert is True the remaining items are returned.
+    """
+    num_combinations_tried = 0
+    num_adds = 0
+    at_least = fewest_cities_needed(total, items)
+    at_most = most_cities_needed(total, items)
+    print('need at least {} cities.'.format(at_least))
+    print('need at most {} cities.'.format(at_most))
+    assert at_least > 1, 'sanity check'
+    assert at_most >= at_least, 'sanity check'
+    
+    # Subsequences of half the length of the city populations have
+    # the most combinations and take the most time to try.
+    # The test below sets the range object to try shortest subsequences first.
+    if at_least < (len(items) - at_most):
+        range_to_try = range(at_least, at_most + 1)
+    else:
+        range_to_try = range(at_most, at_least - 1, -1)  # 
+        
+    for x in range_to_try:
+        print('Trying combinations of {} cities.'.format(x))
+        combs = itertools.combinations(items, x)
+        for comb in combs:
+            num_combinations_tried += 1   # increases solution time slightly
+            num_adds += (x - 1)
+            if sum(comb) == total:   # solved?
+
+                # yes-
+                print('Tried {:,} combinations.'.format(num_combinations_tried))
+                print('Number of additions = {:,}.'.format(num_adds))
+                if invert:
+                    comb = set(items) - set(comb)
+                return comb
+    return False
+```    
