@@ -88,7 +88,6 @@ World!
 Here is an interactive Python session showing an
 expected exception and use of the doctest directive
 `IGNORE_EXCEPTION_DETAIL`.
-To see the doctest directive navigate to [project.md unrendered][1]. 
 
 
 ```pycon
@@ -109,6 +108,3 @@ ValueError:
 >>> coffee + coding == enjoyment
 True
 ```
-
-[1]: https://raw.githubusercontent.com/tmarktaylor/cities/master/project.md
-
