@@ -102,3 +102,6 @@ def show_numbers_of_combinations_of(a_sequence):
         print(fmt.format(n, at_a_time, num_subsequences, 
                         (at_a_time - 1) * num_subsequences))
 ```
+
+
+[project_demo.md](project_demo.md) has more examples of syntax highligting.
