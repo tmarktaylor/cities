@@ -16,7 +16,7 @@ jobs:
       # todo- remove before running in phmdoctest repos
       with:
         repository: tmarktaylor/phmdoctest
-        ref: pypy3issue
+        ref: develop
     
     - name: Set up Python 3.x
       uses: actions/setup-python@v2
