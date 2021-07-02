@@ -1,0 +1,42 @@
+name: Pytest/Coverage/.venv
+
+on:
+  workflow_dispatch:
+  #push:
+  #pull_request:
+
+jobs:
+  tests:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest]
+        # os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+    - uses: actions/checkout@v2
+      # todo- remove before running in phmdoctest repos
+      with:
+        repository: tmarktaylor/phmdoctest
+        ref: develop
+    
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+    - name: Install dependencies in venv
+      run: |
+        pip freeze
+        python -m venv .venv
+        .venv\Scripts\activate.bat
+        python -m pip install --upgrade pip
+        pip install coverage
+        pip install "pytest>=5"
+        pip install -r requirements.txt
+        pip freeze
+    - name: Tests, coverage report
+      run: |
+        coverage run --branch --source=src -m pytest -vv tests
+        coverage run --branch --source=src --append -m phmdoctest --help
+        coverage report --show-missing
+      env:
+        PYTHONPATH: ${{ github.workspace }}/src
