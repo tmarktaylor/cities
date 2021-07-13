@@ -1,3 +1,28 @@
+### examples of autolinks that don't work on GH Pages.
+[--skip](#--skip) |
+[-s short form of --skip](#-s-short-form-of---skip) |
+[--fail-nocode](#--fail-nocode)
+
+
+## --skip
+
+This command
+<!--phmdoctest-label skip-command-->
+
+## -s short form of --skip
+
+This is the same command as above using the short `-s` form of the --skip option
+in two places.
+
+## --fail-nocode
+
+This option produces a pytest file that will always
+fail when no Python code or session blocks are found.
+
+
+
+
+
 ### Examples of code and session blocks
 
 This file (project.md) has some example code and session blocks
