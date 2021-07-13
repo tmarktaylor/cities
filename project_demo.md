@@ -19,6 +19,32 @@ in two places.
 This option produces a pytest file that will always
 fail when no Python code or session blocks are found.
 
+### examples of autolinks that might work.  Just use on "-".
+[-skip2](#-skip2) |
+[-s short form of -skip2](#-s-short-form-of--skip2) |
+[-fail-nocode2](#-fail-nocode2) |
+[arg--skip3](#arg--skip3)
+
+## -skip2
+
+This command
+<!--phmdoctest-label skip-command-->
+
+## -s short form of -skip2
+
+This is the same command as above using the short `-s` form of the --skip option
+in two places.
+
+## -fail-nocode2
+
+This option produces a pytest file that will always
+fail when no Python code or session blocks are found.
+
+## arg--skip3
+
+This command
+<!--phmdoctest-label skip-command-->
+
 
 
 
