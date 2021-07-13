@@ -23,7 +23,7 @@ fail when no Python code or session blocks are found.
 [-skip2](#-skip2) |
 [-s short form of -skip2](#-s-short-form-of--skip2) |
 [-fail-nocode2](#-fail-nocode2) |
-[arg--skip3](#arg--skip3)
+[arg--skip3](#arg--skip3) |
 
 ## -skip2
 
@@ -41,6 +41,18 @@ This option produces a pytest file that will always
 fail when no Python code or session blocks are found.
 
 ## arg--skip3
+
+This command
+<!--phmdoctest-label skip-command-->
+
+[--skip4](#{--skip4}) | [--skip5](#skip5-option)
+
+## {.--skip4}
+
+This command
+<!--phmdoctest-label skip-command-->
+
+## skip5 option
 
 This command
 <!--phmdoctest-label skip-command-->
