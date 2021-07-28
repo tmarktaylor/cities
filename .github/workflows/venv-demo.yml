@@ -27,17 +27,18 @@ jobs:
       run: |
         python -m venv ${{ github.workspace }}\env
         ${{ github.workspace }}\env\Scripts\activate.bat
+        python -m pip --version
       if: startswith(runner.os, 'Windows')
     - name: Linux/macOS Venv
       run: |
         python -m venv ${{ github.workspace }}/env
         source ${{ github.workspace }}/env/bin/activate
+        python -m pip --version
       if: startswith(runner.os, 'Linux') || startswith(runner.os, 'macOS')
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip --version
         python -m pip install --no-deps "."
         python -m pip install -r requirements.txt
         python -m pip install "pytest>=6"
