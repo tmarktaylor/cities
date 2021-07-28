@@ -31,7 +31,7 @@ jobs:
     - name: Linux/macOS Venv
       run: |
         python -m venv ${{ github.workspace }}/env
-        source ${{ github.workspace }}env/bin/activate
+        source ${{ github.workspace }}/env/bin/activate
       if: startswith(runner.os, 'Linux') || startswith(runner.os, 'macOS')
 
     - name: Install dependencies
