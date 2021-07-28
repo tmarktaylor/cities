@@ -26,7 +26,7 @@ jobs:
     - name: Windows Venv
       run: |
         python -m venv ${{ github.workspace }}\env
-        ${{ github.workspace }}\env\Scripts\activate.bat
+        ${{ github.workspace }}\env\Scripts\Activate.ps1
         python -m pip --version
       if: startswith(runner.os, 'Windows')
     - name: Linux/macOS Venv
