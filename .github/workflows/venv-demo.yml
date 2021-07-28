@@ -27,12 +27,12 @@ jobs:
       run: |
         python -m venv ${{ github.workspace }}\env
         ${{ github.workspace }}\env\Scripts\activate.bat
-      if: startswith(runner.os 'Windows')
+      if: startswith(runner.os, 'Windows')
     - name: Linux/macOS Venv
       run: |
         python -m venv ${{ github.workspace }}/env
         source ${{ github.workspace }}env/bin/activate
-      if: startswith(runner.os 'Linux') || startswith(runner.os 'macOS')
+      if: startswith(runner.os, 'Linux') || startswith(runner.os, 'macOS')
 
     - name: Install dependencies
       run: |
