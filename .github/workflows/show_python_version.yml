@@ -1,0 +1,17 @@
+name: Show Python Version
+
+on:
+  workflow_dispatch:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.x
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+      id: set-up-python-3x
+    - name: Show Python Version
+      run: echo ${{ steps.set-up-python-3x.outputs.python-version }}
