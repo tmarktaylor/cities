@@ -26,3 +26,6 @@ jobs:
     - name: Classifiers
       run: |
         python tests/check_classifiers.py
+        # inject a bad classifier
+        sed -i 's/Pytest/pytest/' setup.cfg
+        python tests/check_classifiers.py
