@@ -21,7 +21,7 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install "pytest<6"
         pytest --version
-    - name: Install Pytest <6 --pre
+    - name: Try to install Pytest <6 --pre
       run: |
         python -m pip install --upgrade "pytest<6" --pre
         pytest --version
@@ -29,7 +29,7 @@ jobs:
       run: |
         python -m pip install --upgrade "pytest<7"
         pytest --version
-    - name: Install Pytest ==7 pre
+    - name: Install Pytest --pre
       run: |
-        python -m pip install --upgrade "pytest==7" --pre
+        python -m pip install --upgrade pytest --pre
         pytest --version
