@@ -7,6 +7,8 @@ markdown: GFM
 #   gfm_quirks: [paragraph_end]
 defaults:
   -
+    scope:
+      path: ""
     values:
       matrix.os: {{ matrix.os }}"
       github.workspace: "{{ github.workspace }}"
