@@ -5,3 +5,8 @@ markdown: GFM
 # kramdown:
 #   input: GFM
 #   gfm_quirks: [paragraph_end]
+defaults:
+  -
+    values:
+      matrix.os: {{ matrix.os }}"
+      github.workspace: "{{ github.workspace }}"
