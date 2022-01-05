@@ -5,10 +5,11 @@ markdown: GFM
 # kramdown:
 #   input: GFM
 #   gfm_quirks: [paragraph_end]
-defaults:
-  -
-    scope:
-      path: ""
-    values:
-      matrix.os: {{ matrix.os }}"
-      github.workspace: "{{ github.workspace }}"
+#defaults:
+#  -
+#    scope:
+#      path: ""
+#    values:
+#      matrix.os: {{ matrix.os }}"
+#      github.workspace: "{{ github.workspace }}"
+# did not find expected key while parsing a block mapping at line 13 column 7 (Psych::SyntaxError)
