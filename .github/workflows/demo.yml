@@ -23,8 +23,8 @@ jobs:
       #    python cities.py
       - name: Folding Demo
         run: >
-          python -c '
-          from pathlib import Path;
-          glob = list(Path(".").glob("**.*"));
-          print(glob)
-          '
+          python -c "from pathlib import Path;
+          b = 101;
+          paths = list(Path('.').glob('**.*'));
+          print(paths);
+          print(b)"
