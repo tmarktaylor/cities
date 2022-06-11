@@ -25,6 +25,7 @@ jobs:
         run: >
           python -c "from pathlib import Path;
           b = 101;
-          paths = list(Path('.').glob('**.*'));
-          print(paths);
+          paths = list(Path('.').glob('**/*.*'));
+          names = [p.name for p in paths];
+          print('n'.join(names));
           print(b)"
