@@ -5,7 +5,7 @@ on:
 
 env:
   # todo- update
-  repos: tmarktalor/monotable
+  repos: tmarktaylor/monotable
   ref: v3.0.0
 
 jobs:
