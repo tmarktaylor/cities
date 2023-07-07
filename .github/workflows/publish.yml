@@ -1,0 +1,32 @@
+name: Publish to PYPI
+
+on:
+  # Developers: If making changes here, also suggest adding a
+  # github environment and add it to gh-action-pypi-publish below.
+  workflow_dispatch:
+
+env:
+  # todo- these values are for initial test of monotable
+  # todo- replace these values
+  repos: tmarktaylor/cities
+  ref: v3.0.0
+
+jobs:
+  publish-pypi:
+    runs-on: ubuntu-latest
+    permissions:
+      # IMPORTANT this permission is mandatory for trusted publishing
+      id-token: write
+    steps:
+
+    - uses: actions/download-artifact@v3
+      with:
+        repository: ${{ env.repos }}
+        name: dist-${{ env.ref }}
+        path: dist/*
+
+    - name: Publish dist to Test PYPI
+      uses: pypa/gh-action-pypi-publish@release/v1
+      with:
+        repository-url: https://test.pypi.org/legacy/
+        print-hash: true
