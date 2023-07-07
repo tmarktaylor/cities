@@ -6,12 +6,38 @@ on:
   workflow_dispatch:
 
 env:
-  # todo- these values are for initial test of monotable
-  # todo- replace these values
+  # todo- replace these proof-of-concept values.
+  repos: tmarktaylor/monotable
   ref: v3.0.0
 
 jobs:
+  builddist:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        repository: ${{ env.repos }}
+        ref: ${{ env.ref }}
+
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.x
+
+    - name: Build dist
+      run: |
+        python -m pip install build --user
+        python -m build
+        python -m pip hash dist/*
+
+    - name: Upload dist
+      uses: actions/upload-artifact@v3
+      with:
+        name: dist-${{ env.ref }}
+        path: dist/*
+        retention-days: 15
+
   publish-pypi:
+    needs: builddist
     runs-on: ubuntu-latest
     permissions:
       # IMPORTANT this permission is mandatory for trusted publishing
