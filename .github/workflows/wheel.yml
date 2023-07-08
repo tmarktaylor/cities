@@ -8,7 +8,7 @@ env:
   version: 1.4.0
 
 jobs:
-  builddist:
+  pypi-install:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/setup-python@v4
