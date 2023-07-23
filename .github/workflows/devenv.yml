@@ -28,11 +28,12 @@ jobs:
         pip install pep8-naming
         pip install mypy
         pip install typing
-        pip install check-manifest
         pip install black
         pip install isort
         pip install mkdocs
         pip install tomli
+        pip install Pygments
+        pip install colorama
         #
         pip freeze
         pip freeze > devreq/requirements.txt
