@@ -34,6 +34,8 @@ jobs:
         pip install tomli
         pip install Pygments
         pip install colorama
+        pip install setuptools
+        pip install wheel
         #
         pip freeze
         pip freeze > devreq/requirements.txt
