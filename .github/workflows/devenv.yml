@@ -2,11 +2,12 @@ name: DevEnv
 
 on:
   workflow_dispatch:
-  # pull_request:
-  # push:
-  #   branches:
-  #     - master
-  #     - main
+  pull_request:
+  push:
+    branches:
+      - 'tmarktaylor-patch-1'
+    paths-ignore:
+      '.github/workflows/publish.yml'
 
 jobs:
   deps:
