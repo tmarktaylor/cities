@@ -145,3 +145,16 @@ jobs:
         pytest --doctest-modules -vv tests
 ```
 
+```python
+print("Hello World!")
+```
+
+```expected-ouput
+Hello World
+```
+
+```shell
+python main.py --help
+```
+
+
