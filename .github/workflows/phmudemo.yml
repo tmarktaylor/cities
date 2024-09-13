@@ -30,7 +30,6 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install phmutest
-        pip freeze
     - name: Generate testfiles
       run: |
         mkdir tmp
@@ -59,7 +58,12 @@ jobs:
         path: testfiles
     - name: Show testfiles
       run: ls -l testfiles
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install phmutest
     - name: Run testfiles
       run: |
-        python -m unittest testfiles/readme_code_examples.py -v
-        python -m doctest testfiles/readme_repl_examples.txt
+        python -m unittest readme_code_examples.py -v
+        python -m doctest readme_repl_examples.txt
+      working-directory: testfiles
