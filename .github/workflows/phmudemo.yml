@@ -47,6 +47,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
+      with:
+        repository: tmarktaylor/monotable
+        ref: develop
+
     - name: Setup Python
       uses: actions/setup-python@v5
       with:
