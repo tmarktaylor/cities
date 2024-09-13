@@ -61,6 +61,5 @@ jobs:
       run: ls -l testfiles
     - name: Run testfiles
       run: |
-        python -m unittest readme_code_examples.py -v
-        python -m doctest readme_repl_examples.txt
-      working-directory: testfiles
+        python -m unittest testfiles/readme_code_examples.py -v
+        python -m doctest testfiles/readme_repl_examples.txt
