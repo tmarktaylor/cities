@@ -49,7 +49,7 @@ jobs:
 
     - name: Linux/macOS CI
       run: |
-        sudo ./dev/ci.sh
+        ./dev/ci.sh
       if: startswith(runner.os, 'Linux') || startswith(runner.os, 'macOS')
       continue-on-error: true
 
@@ -64,7 +64,7 @@ jobs:
 
     - name: Linux/macOS  Coverage
       run: |
-        sudo ./dev/runcoverage.sh
+        ./dev/runcoverage.sh
       if: startswith(runner.os, 'Linux') || startswith(runner.os, 'macOS')
       env:
         PYTHONPATH: ${{ github.workspace }}/src
