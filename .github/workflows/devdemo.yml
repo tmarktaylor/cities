@@ -58,10 +58,14 @@ jobs:
       run: |
         call dev\runcoverage.bat
       if: startswith(runner.os, 'Windows')
+      env:
+        PYTHONPATH: ${{ github.workspace }}/src
       continue-on-error: true
 
     - name: Linux/macOS  Coverage
       run: |
         source dev/runcoverage.sh
       if: startswith(runner.os, 'Linux') || startswith(runner.os, 'macOS')
+      env:
+        PYTHONPATH: ${{ github.workspace }}/src
       continue-on-error: true
