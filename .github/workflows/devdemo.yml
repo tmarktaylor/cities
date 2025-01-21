@@ -1,6 +1,9 @@
 name: DEV_DEMO
 # Run dev.yml on phmutest develop branch
 
+# Try running the scripts in the dev folder.
+# Some of the commands within the scripts return error status.
+
 on:
   workflow_dispatch:
 
@@ -22,22 +25,43 @@ jobs:
       with:
         python-version: 3.x
 
-    - name: Install dev extra
+    - name:  Upgrade pip
       run: |
         python -m pip install --upgrade pip
-        python -m pip install "."[dev]
 
-    - name: Windows
+    - name: Windows install dev extra
+      shell: cmd
+      run: |
+        python -m pip install ".[dev]"
+      if: startswith(runner.os, 'Windows')
+
+    - name: Linux/macOS install dev extra
+      run: |
+        python -m pip install '.[dev]'
+      if: startswith(runner.os, 'Linux') || startswith(runner.os, 'macOS')
+
+    - name: Windows CI
       shell: cmd
       run: |
         call dev\ci.bat
+      if: startswith(runner.os, 'Windows')
+      continue-on-error: true
+
+    - name: Linux/macOS CI
+      run: |
+        source dev/ci.sh
+      if: startswith(runner.os, 'Linux') || startswith(runner.os, 'macOS')
+      continue-on-error: true
+
+    - name: Windows Coverage
+      shell: cmd
+      run: |
         call dev\runcoverage.bat
       if: startswith(runner.os, 'Windows')
       continue-on-error: true
 
-    - name: Linux/macOS
+    - name: Linux/macOS  Coverage
       run: |
-        source dev/ci.sh
         source dev/runcoverage.sh
       if: startswith(runner.os, 'Linux') || startswith(runner.os, 'macOS')
       continue-on-error: true
