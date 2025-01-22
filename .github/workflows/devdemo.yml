@@ -48,7 +48,7 @@ jobs:
       continue-on-error: true
 
     - name: Linux/macOS CI
-      run:
+      run: |
         chmod u+x dev/ci.sh
         ./dev/ci.sh
       if: startswith(runner.os, 'Linux') || startswith(runner.os, 'macOS')
