@@ -48,7 +48,8 @@ jobs:
       continue-on-error: true
 
     - name: Linux/macOS CI
-      run: |
+      run:
+        chmod u+x dev/ci/sh
         ./dev/ci.sh
       if: startswith(runner.os, 'Linux') || startswith(runner.os, 'macOS')
       continue-on-error: true
@@ -64,6 +65,7 @@ jobs:
 
     - name: Linux/macOS  Coverage
       run: |
+        chmod u+x dev/runcoverage.sh
         ./dev/runcoverage.sh
       if: startswith(runner.os, 'Linux') || startswith(runner.os, 'macOS')
       env:
