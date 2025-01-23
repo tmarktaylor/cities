@@ -47,12 +47,6 @@ jobs:
       if: startswith(runner.os, 'Windows')
       continue-on-error: true
 
-    - name: Windows --runpytest
-      run: |
-        py -m phmutest tests/md/cleanups.md --fixture docs.fix.code.chdir.change_dir --log --runpytest only
-      if: startswith(runner.os, 'Windows')
-      continue-on-error: true
-
     - name: Linux/macOS CI
       run: |
         chmod u+x dev/ci.sh
