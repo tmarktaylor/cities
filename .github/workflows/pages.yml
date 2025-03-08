@@ -16,9 +16,7 @@ jobs:
     # todo- for dev only, remove. Checkout from cities repos.
     - uses: actions/checkout@v4
       with:
-        sparse-checkout: |
-          mkdocs_color_mode_toggle.yml
-        sparse-checkout-cone-mode: false
+        path: cities
 
     - uses: actions/setup-python@v5
       with:
@@ -29,7 +27,7 @@ jobs:
       run: |
         pip install -r tests/requirements_inspect.txt
         python docs/premkdocs.py
-        mkdocs build --config-file mkdocs_color_mode_toggle.yml
+        mkdocs build --config-file cities/mkdocs_color_mode_toggle.yml
 
     - name: Upload site
       id: upload
