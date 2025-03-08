@@ -13,11 +13,6 @@ jobs:
         repository: tmarktaylor/phmutest
         ref: develop
 
-    # todo- for dev only, remove. Checkout from cities repos.
-    - uses: actions/checkout@v4
-      with:
-        path: cities
-
     - uses: actions/setup-python@v5
       with:
         python-version: 3.x
@@ -27,7 +22,7 @@ jobs:
       run: |
         pip install -r tests/requirements_inspect.txt
         python docs/premkdocs.py
-        mkdocs build --config-file cities/mkdocs_color_mode_toggle.yml
+        mkdocs build --config-file mkdocs_color_mode_toggle.yml
 
     - name: Upload site
       id: upload
