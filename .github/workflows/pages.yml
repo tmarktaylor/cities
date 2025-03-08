@@ -13,6 +13,13 @@ jobs:
         repository: tmarktaylor/phmutest
         ref: develop
 
+    # todo- for dev only, remove. Checkout from cities repos.
+    - uses: actions/checkout@v4
+      with:
+        sparse-checkout: |
+          mkdocs_color_mode_toggle.yml
+        sparse-checkout-cone-mode: false
+
     - uses: actions/setup-python@v5
       with:
         python-version: 3.x
